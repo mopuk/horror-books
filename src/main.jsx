@@ -19,7 +19,7 @@ import ErrorPage from './pages/ErrorPage.jsx';
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "horror-books",
         element: <LayoutComponent />,
         errorElement: <ErrorPage />,
         children: [
