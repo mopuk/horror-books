@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       path: "/",
       redirect: "/horror-books",
     }
-]);
+], {basename: "/horror-books"});
 
 function LayoutComponent() {
   return (
