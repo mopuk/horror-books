@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.main-title {
+    width: 40%;
+    align-self: center;
+
+    margin-top: 3em;
+
+}
+
+.books {
+    margin: 1em 3em;
+    padding: 1em;
+
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+
+}
+
+.book {
+    background: linear-gradient(to bottom, rgb(6, 6, 6), rgb(30, 30, 30));
+    border-radius: 20px;
+    padding: 1.5em;
+
+    display: flex;
+
+    transition: all 0.2s;
+
+    max-width: 500px;
+
+    white-space: pre-wrap;
+}
+
+.book:hover {
+    box-shadow: 0 0 5px 0 white;
+}
+
+.book .img {
+    width: 95px;
+
+    margin: 0.5em;
+}
+
+.book .book-info {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5em;
+}
+
+.book .title {
+    color: rgb(208, 208, 208);
+}
+
+.book .info {
+    color: rgb(171, 171, 171);
+
+    border-bottom: 1px solid rgb(161, 161, 161);
+    margin-bottom: 1em;
+    font: smaller;
+}
+
+.book .description {
+    color: rgb(161, 161, 161);
+
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (min-width: 600px) {
+
+    .books {
+        margin: 3em;
+        padding: 1em;
+    
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+    }
+
+    .book {
+        background: linear-gradient(to bottom, rgb(6, 6, 6), rgb(30, 30, 30));
+        border-radius: 20px;
+        padding: 1.5em;
+    
+        display: flex;
+    
+        transition: all 0.2s;
+    
+        max-width: 325px;
+    
+        white-space: pre-wrap;
+    }
+    
+    .book .img {
+        width: 90px;
+        height: 120px;
+    }
+   
+}
+
+@media (min-width: 850px) {
+    .books {
+        margin: 3em;
+        padding: 1em;
+    
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px 20px;
+    }
+    
+    .book {
+        background: linear-gradient(to bottom, rgb(6, 6, 6), rgb(30, 30, 30));
+        border-radius: 20px;
+        padding: 1.5em;
+    
+        display: flex;
+    
+        transition: all 0.2s;
+    
+        max-width: 425px;
+    
+        white-space: pre-wrap;
+    }
+    
+    .book .img {
+        width: 115px;
+        height: 145px;
+    }
+    
+}
+    
+    
+@media (min-width: 1000px) {
+    .books {
+        margin: 3em;
+        padding: 1em;
+
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 10px;
+    }
+
+    .book {
+        background: linear-gradient(to bottom, rgb(6, 6, 6), rgb(30, 30, 30));
+        border-radius: 20px;
+        padding: 1.5em;
+
+        display: flex;
+
+        transition: all 0.2s;
+
+        max-width: 400px;
+
+        white-space: pre-wrap;
+    }
+
+    .book .img {
+        width: 130px;
+        height: 170px;
+    }
+}
