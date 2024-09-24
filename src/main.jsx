@@ -15,7 +15,6 @@ import NavBar from './NavBar.jsx'
 import Catalog from "./pages/Catalog.jsx";
 import Book from './pages/Book.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
-import { redirect } from 'next/dist/server/api-utils/index.js';
 
 
 const router = createBrowserRouter([
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
       path: "/",
       redirect: "/horror-books",
     }
-], {basename: "/horror-books"});
+]);
 
 function LayoutComponent() {
   return (
