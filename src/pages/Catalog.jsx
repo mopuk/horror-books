@@ -22,7 +22,7 @@ export default function Catalog() {
                 <ul className={styles.books}>
                     {
                     books.map( book => (
-                    <Link to={`/catalog/${book.title.toLowerCase().replace(/ /g, "-")}`} className={styles.book} key={book.id}>
+                    <Link to={`/horror-books/catalog/${book.title.toLowerCase().replace(/ /g, "-")}`} className={styles.book} key={book.id}>
                         <img className={styles.img} src={book.image} alt="" width={95} height={125} />
                         <div className={styles["book-info"]}>
                             <h3 className={styles.title}>{book.title}</h3>
