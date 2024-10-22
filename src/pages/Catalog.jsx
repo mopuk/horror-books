@@ -10,7 +10,6 @@ export default function Catalog() {
 
     const outlet = useOutlet();
 
-
     return (
         <>
             {outlet ?

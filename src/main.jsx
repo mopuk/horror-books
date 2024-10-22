@@ -45,6 +45,7 @@ function LayoutComponent() {
   return (
     <div id="main-container">
       <NavBar />
+      <hr className="line"/>
       <main>
         <Outlet />
       </main>
