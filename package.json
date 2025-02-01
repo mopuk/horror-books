@@ -1,6 +1,6 @@
 {
   "homepage": "https://mopuk.github.io/horror-books",
-  "base": "",
+  "base": "/",
   "name": "horror-books",
   "private": true,
   "version": "0.0.0",
