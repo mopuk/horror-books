@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+.catalog {
+  height: fit-content;
+  width: fit-content;
+  display: grid;
+  margin-top: 2em;
+  grid-template-columns: 1fr 60vw;
+  justify-content: center;
+}
+
+.search-bar-container {
+  margin: 1em 0;
+}
+
+.error-msg {
+  color: white;
+  font-family: "Inter Tight";
+}
+
+@media (min-width: 700px) {
+  .catalog {
+    width: 80vw;
+  }
+}
+@media (min-width: 1000px) {
+  .catalog {
+    width: 60vw;
+  }
+}
+@media (min-width: 1300px) {
+  .catalog {
+    width: 50vw;
+  }
+}

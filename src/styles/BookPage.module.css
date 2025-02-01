@@ -1,0 +1,46 @@
+.container {
+  min-height: 100vh;
+  max-height: fit-content;
+  width: 90vw;
+  background-color: #333333;
+  margin: 2em;
+  padding: 2em;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-info img {
+  float: left;
+  width: 100px;
+  height: auto;
+  margin: 0 10px 10px 0;
+}
+
+.book-info h1 {
+  font-family: "Alegreya SC";
+  color: white;
+}
+
+.book-info h2,
+.section-title {
+  font-family: "Alegreya SC";
+  font-size: 125%;
+  color: #dddddd;
+}
+
+.section-content {
+  font-family: "Inter Tight";
+  color: #bfbfbf;
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 80vw;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    width: 60vw;
+  }
+}

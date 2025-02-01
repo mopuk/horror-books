@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  box-shadow: 0 2px 4px 0 #8ee1eacc;
+}
+
+.nav .link {
+  padding: 0.5em;
+  margin: 0.25em;
+  height: 2em;
+
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+  font-family: "Alegreya SC";
+}
+
+.nav .link:hover {
+  color: rgb(212, 212, 212);
+  cursor: pointer;
+}
+
+.search-bar-container {
+  position: absolute;
+  right: 0.5em;
+  margin: 1em 0;
+}

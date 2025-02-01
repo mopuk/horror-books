@@ -1,60 +1,67 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-import './index.css'
+import "./index.css";
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {
-    createBrowserRouter,
-    Outlet,
-    RouterProvider,
-} from "react-router-dom"
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
-import NavBar from './NavBar.jsx'
-import Catalog from "./pages/Catalog.jsx";
-import Book from './pages/Book.jsx';
-import ErrorPage from './pages/ErrorPage.jsx';
-
+import NavBar from "./components/NavBar.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import CatalogPage from "./pages/CatalogPage.jsx";
+import BookPage from "./pages/BookPage.jsx"
 
 const router = createBrowserRouter([
-    {
-        path: "horror-books",
-        element: <LayoutComponent />,
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            path: "catalog",
-            element: <Catalog />,
-            children: [
-              {
-                path: ":title",
-                element: <Book />,
-              }
-            ]
-          },
-        ]
-    },
-    {
-      path: "/",
-      redirect: "/horror-books",
-    }
+  {
+    path: "horror-books",
+    element: <LayoutComponent />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to="home" replace />,
+      },
+      {
+        path: "home",
+        element: <HomePage />,
+      },
+      {
+        path: "catalog",
+        element: <CatalogPage />,
+      },
+      {
+        path: "catalog/:id",
+        element: <BookPage />
+      }
+    ],
+  },
+  {
+    path: "/",
+    element: <Navigate to="/horror-books" /> 
+  },
 ]);
 
-function LayoutComponent() {
+export function LayoutComponent() {
   return (
-    <div id="main-container">
+    <>
       <NavBar />
-      <hr className="line"/>
       <main>
         <Outlet />
       </main>
-    </div>
-  )
+      <footer>By <span><a href="">MopuK</a></span></footer>
+    </>
+  );
 }
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+  </StrictMode>
+);
