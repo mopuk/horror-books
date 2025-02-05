@@ -2,17 +2,19 @@
   min-height: 100vh;
   max-height: fit-content;
   width: 90vw;
-  background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.7);
+  backdrop-filter: blur(5px);
   margin: 2em;
   padding: 2em;
   border-radius: 15px;
+  border-left: 5px solid #740013;
   display: flex;
   flex-direction: column;
 }
 
 .book-info img {
   float: left;
-  width: 100px;
+  width: 150px;
   height: auto;
   margin: 0 10px 10px 0;
 }
@@ -20,18 +22,40 @@
 .book-info h1 {
   font-family: "Alegreya SC";
   color: white;
+  font-size: 175%;
 }
 
 .book-info h2,
 .section-title {
   font-family: "Alegreya SC";
-  font-size: 125%;
   color: #dddddd;
+}
+
+.book-info h2 {
+  font-size: 125%;
+}
+.section-title {
+  font-size: 150%;
+}
+
+.book-section {
+  margin-bottom: 1em;
+}
+
+.book-section ul {
+  list-style-type: none;
+}
+
+.section-content-container {
+  display: flex;
+  align-items: center;
+  margin: 0 1em;
 }
 
 .section-content {
   font-family: "Inter Tight";
-  color: #bfbfbf;
+  color: rgb(207, 207, 207);
+  white-space: pre-wrap;
 }
 
 @media (min-width: 700px) {

@@ -8,8 +8,8 @@ function NavBar() {
     <nav className={styles["nav"]}>
       <Link to="/horror-books/home" className={styles["link"]}>
         <svg
-          width="20"
-          height="20"
+          width="18"
+          height="18"
           viewBox="0 0 33 35"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +26,8 @@ function NavBar() {
       </Link>
       <Link to="/horror-books/catalog" className={styles["link"]}>
         <svg
-          width="20"
-          height="20"
+          width="18"
+          height="18"
           viewBox="0 0 35 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

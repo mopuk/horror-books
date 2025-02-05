@@ -16,7 +16,8 @@ import NavBar from "./components/NavBar.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CatalogPage from "./pages/CatalogPage.jsx";
-import BookPage from "./pages/BookPage.jsx"
+import BookPage from "./pages/BookPage.jsx";
+import GitHubLogo from "./assets/github-mark-white.svg";
 
 const router = createBrowserRouter([
   {
@@ -38,13 +39,13 @@ const router = createBrowserRouter([
       },
       {
         path: "catalog/:id",
-        element: <BookPage />
-      }
+        element: <BookPage />,
+      },
     ],
   },
   {
     path: "/",
-    element: <Navigate to="/horror-books" /> 
+    element: <Navigate to="/horror-books" />,
   },
 ]);
 
@@ -55,7 +56,19 @@ export function LayoutComponent() {
       <main>
         <Outlet />
       </main>
-      <footer>By <span><a href="">MopuK</a></span></footer>
+      <footer>
+        <p>2025</p>{" "}
+        <a href="https://github.com/mopuk" className="link">
+          <img
+            src={GitHubLogo}
+            alt="Git Hub Logo"
+            width={20}
+            height={20}
+            className="logo"
+          ></img>
+          <span>MopuK</span>
+        </a>
+      </footer>
     </>
   );
 }

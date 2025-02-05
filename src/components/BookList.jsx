@@ -41,6 +41,7 @@ function Book({ info }) {
               ? info.plot.slice(0, 175) + "..."
               : info.plot.slice(0, 200) + "..."
             : ""}
+          <span className={styles["next-page-btn"]}>{" >>>"}</span>
         </p>
       </div>
     </>

@@ -3,7 +3,7 @@
   margin-top: 0;
   list-style: none;
   background-color: rgba(51, 51, 51, 0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   border-radius: 15px;
   padding: 0 0.5em;
 }
@@ -35,6 +35,7 @@
 .book-title:hover,
 .book img:hover {
   cursor: pointer;
+  color: #d4d4d4;
 }
 
 .book-title,
@@ -52,4 +53,15 @@
   font-family: "Inter Tight";
   color: rgb(207, 207, 207);
   font-size: 90%;
+}
+
+.next-page-btn {
+  color: #6A9BD3;
+  font-size: 125%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.next-page-btn:hover {
+  color: #5a85b5;
 }
