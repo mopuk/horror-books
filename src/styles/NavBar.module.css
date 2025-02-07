@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: #242424;
-  box-shadow: 0 2px 4px 0 #dddddd;
+  /* box-shadow: 0 2px 4px 0 #101010; */
 }
 
 .nav .link {

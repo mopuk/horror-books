@@ -39,7 +39,7 @@ function Centuries() {
 
 function CenturiesNav({ chosenCentury, setChosenCentury }) {
   return (
-    <nav>
+    <nav className={styles['centuries-nav']}>
       {centuriesNums.map((century) => {
         return (
           <button
