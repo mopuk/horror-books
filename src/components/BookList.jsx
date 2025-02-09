@@ -3,11 +3,11 @@ import useWindowDimensions from "../utils/windowDimensions";
 import styles from "../styles/BookList.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function BookList({ books }) {
+export default function BookList({ books, viewType }) {
   const navigate = useNavigate();
 
   return (
-    <ul className={styles["book-list"]}>
+    <ul className={`${styles["book-list"]} ${styles[viewType]}`}>
       {Object.entries(books).map(([index, book]) => {
         return (
           <li
@@ -41,7 +41,6 @@ function Book({ info }) {
               ? info.plot.slice(0, 175) + "..."
               : info.plot.slice(0, 200) + "..."
             : ""}
-          <span className={styles["next-page-btn"]}>{" >>>"}</span>
         </p>
       </div>
     </>

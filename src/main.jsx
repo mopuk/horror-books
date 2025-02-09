@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import "./index.css";
+import "./styles/index.css";
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
         path: "catalog/:id",
         element: <BookPage />,
       },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      }
     ],
   },
   {

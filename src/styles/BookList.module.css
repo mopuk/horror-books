@@ -1,21 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+@import "variables";
+
 .book-list {
-  margin: 2em;
-  margin-top: 0;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #1c1c1cd6 var(--bg-transparent);
   list-style: none;
-  background-color: rgba(51, 51, 51, 0.7);
-  backdrop-filter: blur(5px);
-  border-radius: 15px;
+  border-radius: var(--rounded-borders);
   padding: 0 0.5em;
+}
+
+.book-list.grid {
+  display: grid;
+  grid-template-columns: 200px 200px;
+}
+
+.book-list.list {
+  display: block;
 }
 
 .book {
   min-height: 150px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
   max-height: fit-content;
-  background-color: rgba(51, 51, 51, 0);
   padding: 15px 20px;
-  margin: 10px 0;
-  border-bottom: 1px solid #7c7c7c;
   display: flex;
+}
+
+.book:not(:last-child) {
+  border-bottom: 1px solid #7c7c7c;
 }
 
 .book img {
@@ -28,7 +44,8 @@
 }
 
 .book-title {
-  color: white;
+  color: var(--headers-color);
+  font: var(--headers-font);
   margin: 0;
 }
 
@@ -38,30 +55,17 @@
   color: #d4d4d4;
 }
 
-.book-title,
 .book-author {
-  font-family: "Alegreya SC";
+  font: var(--subheaders-font);
 }
 
 .book-author {
-  color: rgb(213, 213, 213);
+  color: var(--subheaders-color);
   margin: 0;
   margin-bottom: 10px;
 }
 
 .book-plot {
-  font-family: "Inter Tight";
-  color: rgb(207, 207, 207);
-  font-size: 90%;
-}
-
-.next-page-btn {
-  color: #6A9BD3;
-  font-size: 125%;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.next-page-btn:hover {
-  color: #5a85b5;
+  font: var(--paragraph-font);
+  color: var(--paragraph-color);
 }

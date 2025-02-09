@@ -1,29 +1,26 @@
+@import "variables";
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #242424;
-  /* box-shadow: 0 2px 4px 0 #101010; */
 }
 
 .nav .link {
   padding: 0.5em;
   margin: 0.25em;
   height: 2em;
-
   display: flex;
   align-items: center;
   color: #ffffff;
   text-decoration: none;
-
   font-family: "Alegreya SC";
 }
-
 .nav .link:hover {
   color: #d4d4d4;
   cursor: pointer;
 }
-
 .nav .link svg {
   margin: 0 3px;
 }

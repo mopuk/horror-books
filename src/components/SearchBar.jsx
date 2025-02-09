@@ -34,7 +34,7 @@ export default function SearchBar({ isCatalog }) {
   }
 
   return (
-    <div>
+    <>
       <div className={styles["search-bar"]} onKeyDown={handleSearch}>
         <input
           ref={inputRef}
@@ -65,6 +65,6 @@ export default function SearchBar({ isCatalog }) {
           </svg>
         </button>
       </div>
-    </div>
+    </>
   );
 }

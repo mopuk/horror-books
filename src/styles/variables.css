@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --bg-grey: #242424;
+  --bg-transparent-grey: #333333b3;
+  --bg-transparent: #33333300;
+  --light-grey: #c0c0c0;
+  --crimson-red: #740013;
+  --headers-color: white;
+  --headers-font: bold 1.5em "Alegreya SC";
+  --subheaders-font: bold 1.25em "Alegreya SC";
+  --subheaders-color: #d5d5d5;
+  --title-font: 4em "Creepster", serif;
+  --paragraph-font: 1em "Inter Tight", serif;
+  --paragraph-color: #cfcfcf;
+  --rounded-borders: 0 15px 15px 0;
+  
+}

@@ -1,21 +1,44 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "variables";
+
 
 .catalog {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   display: grid;
   margin-top: 2em;
   grid-template-columns: 1fr 60vw;
+  grid-template-areas: "side main";
+  gap: 5px;
   justify-content: center;
 }
 
-.search-bar-container {
-  margin: 1em 0;
+.sidebar-container {
+  grid-area: side;
+  height: 250px;
+  background-color: var(--bg-transparent-grey);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 0.5em 0.25em;
+}
+
+.books {
+  grid-area: main;
+  height: 100vh;
+  border-left: 5px solid var(--crimson-red);
+  background-color: var(--bg-transparent-grey);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .error-msg {
   color: white;
-  font-family: "Inter Tight";
+  font: var(--paragraph-font);
+  text-align: center;
 }
 
 @media (min-width: 700px) {
