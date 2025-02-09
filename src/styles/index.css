@@ -82,7 +82,7 @@ footer {
   color: white;
   background-color: var(--bg-grey);
   margin-top: 0.5em;
-  font: var(--headers-font);
+  font: var(--subheaders-font);
   display: flex;
   justify-content: center;
   align-items: center;
