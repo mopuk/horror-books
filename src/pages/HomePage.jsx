@@ -1,6 +1,7 @@
 import styles from "../styles/HomePage.module.css";
 import React, { useState } from "react";
-import Centuries from "../components/Centuries";
+import Centuries from "../components/Centuries.jsx";
+
 
 export default function Home() {
   return (

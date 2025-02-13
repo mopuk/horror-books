@@ -10,7 +10,7 @@ const letters = {
   21: "XXI",
 };
 
-export default function CenturyContainer() {
+export default function Centuries() {
   const [chosenCentury, setChosenCentury] = useState(centuriesNums[0]);
 
   return (
@@ -33,7 +33,7 @@ export default function CenturyContainer() {
                     className={styles.bookCover}
                   />
                 )}
-                <div className={styles["book-info"]}>
+                <div className={styles["section-content"]}>
                   <h2 className={styles.heading}>{section.heading}</h2>
                   <p className={styles["plain-text"]}>{section.text}</p>
                 </div>

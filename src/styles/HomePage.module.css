@@ -32,3 +32,20 @@
 }
 
 
+
+
+@media (min-width: 700px) {
+  .introduction {
+    width: 80vw;
+  }
+}
+@media (min-width: 1000px) {
+  .introduction {
+    width: 60vw;
+  }
+}
+@media (min-width: 1300px) {
+  .introduction {
+    width: 50vw;
+  }
+}

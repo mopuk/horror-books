@@ -22,15 +22,15 @@
 }
 
 .book-info h1 {
-  font-family: "Alegreya SC";
+  font: var(--subheaders-font);
   color: white;
   font-size: 175%;
 }
 
 .book-info h2,
 .section-title {
-  font-family: "Alegreya SC";
-  color: #dddddd;
+  font: var(--subheaders-font);
+  color: var(--subheaders-color);
 }
 
 .book-info h2 {
@@ -44,20 +44,29 @@
   margin-bottom: 1em;
 }
 
-.book-section ul {
-  list-style-type: none;
-}
-
-.section-content-container {
-  display: flex;
-  align-items: center;
+.content-container {
   margin: 0 1em;
-}
+  list-style-type: none;
+  position: relative;
 
-.section-content {
-  font-family: "Inter Tight";
-  color: rgb(207, 207, 207);
-  white-space: pre-wrap;
+  & h2 {
+    margin-top: 0.5em;
+    font: var(--subheaders-font);
+    color: var(--subheaders-color);
+    position: relative;
+  }
+
+  & h2::before {
+    content: url();
+    position: absolute;
+    left: -1em;
+  }
+
+  & p {
+    font: var(--paragraph-font);
+    color: var(--paragraph-color);
+    white-space: pre-wrap;
+  }
 }
 
 @media (min-width: 700px) {

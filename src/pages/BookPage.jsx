@@ -19,34 +19,39 @@ export default function BookPage() {
       </div>
       {Object.entries(book.sections).map(([index, section]) => {
         return (
-          <section className={styles["book-section"]} key={index}>
-            <h2 className={styles["section-title"]}>{section.name}</h2>
-            {Array.isArray(section.content) ? (
-              <ul>
-                {section.content.map((val, ind) => (
-                  <li key={ind} className={styles['section-content-container']}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="28"
-                      height="28"
-                    >
-                      <path
-                        d="m14.707 11.293-4-4A1 1 0 0 0 9 8v8a1 1 0 0 0 1.707.707l4-4a1 1 0 0 0 0-1.414z"
-                        fill="#dddddd"
-                        data-name="Right"
-                      />
-                    </svg>
-                    <pre className={styles["section-content"]}>{val}</pre>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <pre className={styles["section-content"]}>{section.content}</pre>
-            )}
-          </section>
+          <Section name={section?.name} content={section.content} key={index} />
         );
       })}
     </article>
+  );
+}
+
+function Section({ name, content }) {
+  return (
+    <section className={styles["book-section"]}>
+      <h2 className={styles["section-title"]}>{name}</h2>
+      {Array.isArray(content) ? (
+        <ul>
+          {content.map((topic, index) => {
+            return (
+              <Topic title={topic.name} text={topic.content} key={index} />
+            );
+          })}
+        </ul>
+      ) : (
+        <div className={styles["content-container"]}>
+          <p>{content}</p>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function Topic({ title, text }) {
+  return (
+    <li className={styles["content-container"]}>
+      {title && <h2>{title}</h2>}
+      <p>{text}</p>
+    </li>
   );
 }

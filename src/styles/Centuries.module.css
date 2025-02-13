@@ -103,12 +103,12 @@
   display: flex;
 }
 
-.book-info .heading {
+.section-content .heading {
   color: var(--headers-color);
   font: var(--headers-font);
 }
 
-.book-info .plain-text {
+.section-content .plain-text {
   font: var(--paragraph-font);
   color: var(--paragraph-color);
   text-wrap: balance;
