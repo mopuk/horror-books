@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #242424;
+  background-color: var(--bg-grey);
 }
 
 .nav .link {
@@ -13,9 +13,12 @@
   height: 2em;
   display: flex;
   align-items: center;
-  color: #ffffff;
+  /* color: #ffffff; */
   text-decoration: none;
-  font-family: "Alegreya SC";
+  font: var(--headers-font);
+  font-weight: initial;
+  font-size: 1em;
+  color: var(--headers-color);
 }
 .nav .link:hover {
   color: #d4d4d4;
