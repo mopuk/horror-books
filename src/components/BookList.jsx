@@ -1,13 +1,13 @@
 import React from "react";
-import useWindowDimensions from "../utils/windowDimensions";
 import styles from "../styles/BookList.module.css";
 import { useNavigate } from "react-router-dom";
+import useWindowDimensions from "../utils/windowDimensions";
 
-export default function BookList({ books, viewType }) {
+export default function BookList({ books }) {
   const navigate = useNavigate();
 
   return (
-    <ul className={`${styles["book-list"]} ${styles[viewType]}`}>
+    <ul className={styles["book-list"]}>
       {Object.entries(books).map(([index, book]) => {
         return (
           <li
@@ -24,7 +24,7 @@ export default function BookList({ books, viewType }) {
 }
 
 function Book({ info }) {
-  const windowDimensions = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   return (
     <>
       <img src={info.image} alt={info.name_en} width={50} height={75}></img>
@@ -35,9 +35,9 @@ function Book({ info }) {
         <h3 className={styles["book-author"]}>{info.author_ru}</h3>
         <p className={styles["book-plot"]}>
           {info.plot
-            ? windowDimensions.width < 500
+            ? width < 500
               ? info.plot.slice(0, 100) + "..."
-              : windowDimensions.width < 1000
+              : width < 1000
               ? info.plot.slice(0, 175) + "..."
               : info.plot.slice(0, 200) + "..."
             : ""}

@@ -1,14 +1,13 @@
 import styles from "../styles/CatalogPage.module.css";
 import React, { useState, useEffect } from "react";
 import BookList from "../components/BookList.jsx";
-import Sidebar from "../components/Sidebar.jsx";
 import { books } from "../assets/books.js";
 import { useSearchParams } from "react-router-dom";
+import SearchBar from "../components/SearchBar.jsx";
 
 export default function CatalogPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchingBooks, setSearchingBooks] = useState({});
-  const [viewType, setViewType] = useState("list");
   const query = searchParams.get("q") || "";
 
   useEffect(() => {
@@ -32,10 +31,10 @@ export default function CatalogPage() {
 
   return (
     <div className={styles.catalog}>
-      <Sidebar setViewType={setViewType} />
+      <SearchBar />
       <div className={`${styles.books}`}>
         {Object.keys(searchingBooks).length !== 0 ? (
-          <BookList books={searchingBooks} viewType={viewType} />
+          <BookList books={searchingBooks} />
         ) : (
           <h2 className={styles["error-msg"]}>
             Книг по запросу {query} не найдено

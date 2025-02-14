@@ -1,9 +1,12 @@
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import useWindowDimensions from "../utils/windowDimensions.jsx";
 import SearchBar from "./SearchBar";
 import styles from "../styles/NavBar.module.css";
 
 function NavBar() {
+  const { width, height } = useWindowDimensions();
+
   return (
     <nav className={styles["nav"]}>
       <Link to="/horror-books/home" className={styles["link"]}>
@@ -43,9 +46,11 @@ function NavBar() {
 
         <p>КАТАЛОГ</p>
       </Link>
-      <div className={styles["search-bar-container"]}>
-        <SearchBar />
-      </div>
+      {width > 700 && (
+        <div className={styles["search-bar-container"]}>
+          <SearchBar />
+        </div>
+      )}
     </nav>
   );
 }

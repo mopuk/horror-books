@@ -8,22 +8,13 @@
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
-  width: fit-content;
-  display: grid;
-  margin-top: 2em;
-  grid-template-columns: 1fr 60vw;
-  grid-template-areas: "side main";
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
   gap: 5px;
+  margin-top: 2em;
   justify-content: center;
-}
-
-.sidebar-container {
-  grid-area: side;
-  height: 250px;
-  background-color: var(--bg-transparent-grey);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  padding: 0.5em 0.25em;
+  align-items: center;
 }
 
 .books {
