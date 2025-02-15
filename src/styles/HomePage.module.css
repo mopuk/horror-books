@@ -10,33 +10,38 @@
 }
 
 .title {
-  height: 250px;
+  height: 200px;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  & h1 {
+    font-family: "Creepster";
+    font-size: 350%;
+    text-wrap: wrap;
+    color: white;
+  }
+
+  & h2 {
+    font-size: 105%;
+    font-family: "Alegreya SC";
+    color: #dddddd;
+  }
 }
-
-.title h1 {
-  font-family: "Creepster";
-  font-size: 400%;
-  text-wrap: wrap;
-  color: white;
-}
-
-.title h2 {
-  font-size: 125%;
-  font-family: "Alegreya SC";
-  color: #dddddd;
-}
-
-
-
 
 @media (min-width: 700px) {
   .introduction {
     width: 80vw;
+  }
+  .title {
+    height: 250px;
+    & h1 {
+      font-size: 400%;
+    }
+    & h2 {
+      font-size: 125%;
+    }
   }
 }
 @media (min-width: 1000px) {

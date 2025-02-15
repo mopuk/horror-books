@@ -64,6 +64,7 @@ function CenturiesNav({ chosenCentury, setChosenCentury }) {
               century === chosenCentury ? styles.chosen : ""
             }`}
           >
+            
             <span className={styles["btn-text"]}>{letters[century]} век</span>
           </button>
         );
