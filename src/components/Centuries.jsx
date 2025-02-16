@@ -33,7 +33,6 @@ export default function Centuries() {
                     className={styles.bookCover}
                   />
                 )}
-
                 <h2 className={styles.heading}>{section.heading}</h2>
                 <p className={styles["plain-text"]}>{section.text}</p>
               </section>

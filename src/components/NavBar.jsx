@@ -25,7 +25,7 @@ function NavBar() {
             strokeLinejoin="round"
           />
         </svg>
-        <p>ГЛАВНАЯ</p>
+        ГЛАВНАЯ
       </Link>
       <Link to="/horror-books/catalog" className={styles["link"]}>
         <svg
@@ -43,8 +43,7 @@ function NavBar() {
             strokeLinejoin="round"
           />
         </svg>
-
-        <p>КАТАЛОГ</p>
+        КАТАЛОГ
       </Link>
       {width > 700 && (
         <div className={styles["search-bar-container"]}>
