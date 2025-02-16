@@ -9,8 +9,8 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 2em;
+  gap: 1em;
+  margin-top: 1em;
   justify-content: center;
   align-items: center;
   
