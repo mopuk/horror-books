@@ -33,10 +33,9 @@ export default function Centuries() {
                     className={styles.bookCover}
                   />
                 )}
-                <div className={styles["section-content"]}>
-                  <h2 className={styles.heading}>{section.heading}</h2>
-                  <p className={styles["plain-text"]}>{section.text}</p>
-                </div>
+
+                <h2 className={styles.heading}>{section.heading}</h2>
+                <p className={styles["plain-text"]}>{section.text}</p>
               </section>
             );
           })
@@ -64,7 +63,6 @@ function CenturiesNav({ chosenCentury, setChosenCentury }) {
               century === chosenCentury ? styles.chosen : ""
             }`}
           >
-            
             <span className={styles["btn-text"]}>{letters[century]} век</span>
           </button>
         );
