@@ -2,14 +2,26 @@
 
 .centuries-container {
   max-height: fit-content;
-  width: 80vw;
+  width: calc(100vw);
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 5px solid var(--crimson-red);
-  border-radius: var(--rounded-borders);
 }
-
+@media (min-width: 500px) {
+  .centuries-container {
+    width: 90vw;
+    border-left: 5px solid var(--crimson-red);
+    border-radius: var(--rounded-borders);
+  }
+  .centuries-nav {
+    border-radius: 0 15px 0 0;
+  }
+}
+@media (min-width: 700px) {
+  .centuries-container {
+    width: 80vw;
+  }
+}
 @media (min-width: 1000px) {
   .centuries-container {
     width: 70vw;
@@ -30,7 +42,6 @@
   padding-left: 0.25rem;
   background-color: #333333cc;
   border-bottom: 3px solid var(--bg-transparent);
-  border-radius: 0 15px 0 0;
 }
 
 .centuries-btn {
@@ -70,10 +81,6 @@
   &:not(:last-child) {
     border-right: 3px solid #15151540;
   }
-
-  &:last-child {
-    border-radius: 0 15px 0 0;
-  }
 }
 
 @keyframes enterFromTop {
@@ -88,6 +95,10 @@
 @media (min-width: 700px) {
   .centuries-btn {
     font-size: 1.25em;
+  }
+
+  .centuries-btn:last-child {
+    border-radius: 0 15px 0 0;
   }
 }
 

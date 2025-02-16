@@ -1,6 +1,4 @@
-
 @import "variables";
-
 
 .catalog {
   height: -webkit-fit-content;
@@ -8,28 +6,27 @@
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
-  width: 90vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin-top: 2em;
   justify-content: center;
   align-items: center;
-}
+  
+  & .books {
+    height: fit-content;
+    border-left: 5px solid var(--crimson-red);
+    background-color: var(--bg-transparent-grey);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
 
-.books {
-  grid-area: main;
-  height: 100vh;
-  border-left: 5px solid var(--crimson-red);
-  background-color: var(--bg-transparent-grey);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-}
-
-.error-msg {
-  color: white;
-  font: var(--paragraph-font);
-  text-align: center;
+  & .error-msg {
+    color: white;
+    font: var(--paragraph-font);
+    text-align: center;
+  }
 }
 
 @media (min-width: 700px) {

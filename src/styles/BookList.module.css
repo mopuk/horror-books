@@ -3,22 +3,13 @@
 @import "variables";
 
 .book-list {
-  height: 100%;
-  overflow-y: scroll;
+  height: fit-content;
+  /* overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: #1c1c1cd6 var(--bg-transparent);
+  scrollbar-color: #1c1c1cd6 var(--bg-transparent); */
   list-style: none;
   border-radius: var(--rounded-borders);
   padding: 0 0.5em;
-}
-
-.book-list.grid {
-  display: grid;
-  grid-template-columns: 200px 200px;
-}
-
-.book-list.list {
-  display: block;
 }
 
 .book {
@@ -30,42 +21,47 @@
   display: flex;
 }
 
-.book:not(:last-child) {
-  border-bottom: 1px solid #7c7c7c;
+.book {
+  &:not(:last-child) {
+    border-bottom: 1px solid #7c7c7c;
+  }
+
+  & img {
+    width: 90px;
+    height: 120px;
+  }
+
+  & .info-container {
+    margin: 0 10px;
+  }
+
+  & img:hover {
+    cursor: pointer;
+    color: #d4d4d4;
+  }
 }
 
-.book img {
-  width: 90px;
-  height: 120px;
-}
+.info-container {
+  & .book-title {
+    color: var(--headers-color);
+    font: var(--headers-font);
+    margin: 0;
+  }
 
-.book .info-container {
-  margin: 0 10px;
-}
+  & .book-title:hover {
+    cursor: pointer;
+    color: #d4d4d4;
+  }
 
-.book-title {
-  color: var(--headers-color);
-  font: var(--headers-font);
-  margin: 0;
-}
+  & .book-author {
+    font: var(--subheaders-font);
+    color: var(--subheaders-color);
+    margin: 0;
+    margin-bottom: 10px;
+  }
 
-.book-title:hover,
-.book img:hover {
-  cursor: pointer;
-  color: #d4d4d4;
-}
-
-.book-author {
-  font: var(--subheaders-font);
-}
-
-.book-author {
-  color: var(--subheaders-color);
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.book-plot {
-  font: var(--paragraph-font);
-  color: var(--paragraph-color);
+  & .book-plot {
+    font: var(--paragraph-font);
+    color: var(--paragraph-color);
+  }
 }
