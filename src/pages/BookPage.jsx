@@ -1,9 +1,11 @@
 import React from "react";
+import Sidebar from "../components/Sidebar";
 import { useParams } from "react-router-dom";
 import { books } from "../assets/books";
 import styles from "../styles/BookPage.module.css";
 
 export default function BookPage() {
+  
   const params = useParams();
   const id = params.id;
   const book = books[id];
@@ -17,19 +19,27 @@ export default function BookPage() {
           {book.author_ru} ({book.year})
         </h2>
       </div>
+      <Sidebar source={book.sections} />
       {Object.entries(book.sections).map(([index, section]) => {
         return (
-          <Section name={section?.name} content={section.content} key={index} />
+          <Section
+            name={section?.name}
+            content={section.content}
+            id={section.id}
+            key={index}
+          />
         );
       })}
     </article>
   );
 }
 
-function Section({ name, content }) {
+function Section({ name, content, id }) {
   return (
     <section className={styles["book-section"]}>
-      <h2 className={styles["section-title"]}>{name}</h2>
+      <h2 className={styles["section-title"]} id={id}>
+        {name}
+      </h2>
       {Array.isArray(content) ? (
         <ul>
           {content.map((topic, index) => {

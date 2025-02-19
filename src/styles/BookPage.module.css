@@ -12,6 +12,7 @@
   border-left: 5px solid var(--crimson-red);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .book-info {

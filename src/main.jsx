@@ -11,6 +11,7 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+import { useCurrentScroll } from "./utils/CurrentScroll.jsx";
 
 import NavBar from "./components/NavBar.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
@@ -54,10 +55,24 @@ const router = createBrowserRouter([
 ]);
 
 export function LayoutComponent() {
+  const currentScroll = useCurrentScroll();
   return (
     <>
       <NavBar />
       <main>
+        {currentScroll > 0 && (
+          <div className="top-btn">
+            <button
+              onClick={(e) => {
+                window.scrollTo({
+                  top: 0,
+                });
+              }}
+            >
+              ↑
+            </button>
+          </div>
+        )}
         <Outlet />
       </main>
       <footer>
