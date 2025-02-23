@@ -67,6 +67,7 @@
   & .btn-text:hover {
     cursor: pointer;
     font-weight: bold;
+    text-shadow: var(--crimson-red) 1px 0 10px;
   }
 
   & .btn-text::after {

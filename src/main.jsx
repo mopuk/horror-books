@@ -60,19 +60,18 @@ export function LayoutComponent() {
     <>
       <NavBar />
       <main>
-        {currentScroll > 0 && (
-          <div className="top-btn">
-            <button
-              onClick={(e) => {
-                window.scrollTo({
-                  top: 0,
-                });
-              }}
-            >
-              ↑
-            </button>
-          </div>
-        )}
+        <div className={`top-btn ${currentScroll > 0 ? "enter" : "exit"}`}>
+          <button
+            onClick={(e) => {
+              window.scrollTo({
+                top: 0,
+              });
+            }}
+          >
+            ↑
+          </button>
+        </div>
+
         <Outlet />
       </main>
       <footer>

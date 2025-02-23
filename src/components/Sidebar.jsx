@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import styles from "../styles/Sidebar.module.css";
 
 export default function Sidebar({ source }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [containerHeight, setContainerHeight] = useState(0);
   const links = useLinks(source);
+  const headersRef = useRef();
+
+  useEffect(() => {
+    const headersHeight = headersRef.current.offsetHeight;
+    setContainerHeight(isOpen ? headersHeight : 0);
+  }, [isOpen, links]);
 
   return (
     <aside className={styles.side}>
@@ -13,26 +20,36 @@ export default function Sidebar({ source }) {
         onClick={(e) => setIsOpen((prev) => !prev)}
       >
         <h2>Содержание</h2>
-        <span className={styles["open-button"]}>▼</span>
+        {/* {isOpen ? "▼" : "◄"} */}
+        <span
+          className={styles["open-button"]}
+          style={{ transform: `${isOpen ? "rotate(-90deg)" : ""}` }}
+        >
+          ◄
+        </span>
       </div>
 
-      <ul
-        className={`${styles.headers} ${
-          isOpen ? styles.opened : ""
-        }`}
+      <div
+        className={styles["headers-container"]}
+        style={{ height: `${containerHeight}px` }}
       >
-        {links.map(({ id, header }) => {
-          if (header) {
-            return (
-              <li key={id}>
-                <HashLink to={`#${id}`} className={styles.link}>
-                  {header}
-                </HashLink>
-              </li>
-            );
-          }
-        })}
-      </ul>
+        <ul
+          className={`${styles.headers} ${isOpen ? styles.opened : ""}`}
+          ref={headersRef}
+        >
+          {links.map(({ id, header }) => {
+            if (header) {
+              return (
+                <li key={id}>
+                  <HashLink to={`#${id}`} className={styles.link}>
+                    {header}
+                  </HashLink>
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </div>
     </aside>
   );
 }

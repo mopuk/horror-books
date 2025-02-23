@@ -12,6 +12,7 @@
   & .side-header {
     width: 100%;
     background-color: var(--crimson-red);
+    border-radius: var(--rounded-borders);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,20 +22,39 @@
 
     & .open-button {
       margin: 0 0.5em;
-      background-color: var(--bg-transparent);
       border: none;
       color: white;
+      transition: transform 0.3s linear;
     }
   }
 
-  .headers {
-    display: none;
-    list-style-type: none;
-    padding: 0.5em 2em;
-  }
+  .headers-container {
+    transition: height 0.3s linear;
+    overflow: hidden;
 
-  .headers.opened {
-    display: block;
+    & .headers {
+      padding: 0.5em 0;
+      width: 100%;
+
+      & li {
+        margin: 0.5em 0;
+        display: flex;
+        align-items: baseline;
+
+        &::before {
+          content: "► ";
+          height: 1em;
+          width: 1em;
+          color: var(--crimson-red);
+          opacity: 0;
+          transition: all 0.2s ease;
+          margin-right: 0.5em;
+        }
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 

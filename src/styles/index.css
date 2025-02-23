@@ -37,11 +37,21 @@ main {
 
   & .top-btn {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 2em;
+    right: 1.5em;
     width: 3em;
+    z-index: 100;
+    animation: grow 0.3s alternate;
     height: 3em;
-    
+    transition: transform 0.2s ease;
+
+    &.enter {
+      transform: scale(1);
+    }
+
+    &.exit {
+      transform: scale(0);
+    }
 
     & button {
       width: 100%;
@@ -53,10 +63,9 @@ main {
       font: var(--subheaders-font);
       font-size: 1.75em;
       color: var(--subheaders-color);
-    
+
       &:hover {
         background-color: #5e0010;
-        /* box-shadow: 0 2px 4px 0 var(--bg-grey); */
         cursor: pointer;
       }
     }
