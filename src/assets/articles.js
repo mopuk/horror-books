@@ -1,4 +1,5 @@
 import castle_of_otranto from "./covers/castle_of_otranto.jpg";
+import romanticism_image from "./romanticism_image.jpg";
 
 export const articles = {
   18: {
@@ -9,7 +10,14 @@ export const articles = {
     "first work": {
       heading: "Замок Отранто",
       text: "«Замок Отранто» Горация Уолпола (1794) принято считать первым произведением готической литературы. В нем рассказывается о замке с привидениями, загадочных событиях и ощущении надвигающейся гибели, что задало тон для будущих произведений.",
-      image: castle_of_otranto,
+      images: {
+        src: castle_of_otranto,
+        alt: "\"Замок Отранто\"\n Гораций Уолпол (1794)",
+        link: "/horror-books/catalog/0",
+        author: "Гораций Уолпол",
+        name: "\"Замок Отранто\"",
+        width: "96px",
+      }
     },
     "main features": {
       heading: "Основные черты",
@@ -22,7 +30,15 @@ export const articles = {
     "romanticism influence": {
       heading: "Влияние романтизма",
       text: "В конце этого же века огромное распространение получил романтизм, который подчеркивал эмоции, природу и возвышенное. Это движение оказало влияние на литературу ужасов, побуждая писателей исследовать темные аспекты человеческого опыта, а романтическое увлечение таинственным  и рациональным способствовало популярности готической прозы.",
-    },
+      images: {
+        src: romanticism_image,
+        alt: "\"The Incubus Leaving Two Sleeping Women\" Henry Fuseli, Public domain, via Wikimedia Commons",
+        link: "https://commons.wikimedia.org/wiki/File:Johann_Heinrich_F%C3%BCssli_014.jpg",
+        name: "\"Инкуб покидает двух спящих женщин\"",
+        author: "Хенри Фусели",
+        width: "128px",
+      },
+    }
   },
   19: {
     introduction: {

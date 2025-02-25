@@ -5,7 +5,6 @@ import { books } from "../assets/books";
 import styles from "../styles/BookPage.module.css";
 
 export default function BookPage() {
-  
   const params = useParams();
   const id = params.id;
   const book = books[id];

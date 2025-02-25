@@ -5,6 +5,7 @@ import nosferatu from "./covers/nosferatu.jpg";
 import dracula from "./covers/dracula.jpg";
 import frankenstein from "./covers/frankenstein.jpg";
 
+
 export const books = {
   0: {
     name_ru: "Замок Отранто",

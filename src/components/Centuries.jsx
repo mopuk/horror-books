@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useWindowDimensions from "../utils/windowDimensions.jsx";
 import styles from "../styles/Centuries.module.css";
 import { articles } from "../assets/articles";
 
@@ -12,6 +13,8 @@ const letters = {
 
 export default function Centuries() {
   const [chosenCentury, setChosenCentury] = useState(centuriesNums[0]);
+  const [onHover, setOnHover] = useState(null);
+  const { width, height } = useWindowDimensions();
 
   return (
     <div className={styles["centuries-container"]}>
@@ -24,17 +27,37 @@ export default function Centuries() {
           Object.entries(articles[chosenCentury]).map(([key, section]) => {
             return (
               <section className={styles.section} key={key}>
-                {section.image && (
-                  <img
-                    src={section.image}
-                    alt={section.heading}
-                    width={100}
-                    height={150}
-                    className={styles.bookCover}
-                  />
+                {section.images && (
+                  <div
+                    className={styles["image-container"]}
+                    onMouseEnter={(e) => setOnHover(section.images.name)}
+                    onMouseLeave={(e) => setOnHover(null)}
+                  >
+                    <a href={`${section.images.link || ""}`} target="_blank">
+                      <img
+                        src={section.images.src}
+                        alt={section.images.alt}
+                        width={section.images.width}
+                        className={styles.bookCover}
+                      />
+
+                      <div
+                        className={`${styles["image-desc-container"]} ${
+                          width < 500 || onHover === section.images.name
+                            ? styles.active
+                            : ""
+                        }`}
+                      >
+                        <p>{section.images.name}</p>
+                        <p>{section.images.author}</p>
+                      </div>
+                    </a>
+                  </div>
                 )}
-                <h2 className={styles.heading}>{section.heading}</h2>
-                <p className={styles["plain-text"]}>{section.text}</p>
+                <div className={styles["section-content"]}>
+                  <h2 className={styles.heading}>{section.heading}</h2>
+                  <p className={styles["plain-text"]}>{section.text}</p>
+                </div>
               </section>
             );
           })
