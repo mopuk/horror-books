@@ -1,5 +1,7 @@
-import castle_of_otranto from "./covers/castle_of_otranto.jpg";
-import romanticism_image from "./romanticism_image.jpg";
+import castle_of_otranto from "./img/castle_of_otranto.jpg";
+import romanticism_image from "./img/romanticism_image.jpg";
+import frankenstein from "./img/frankenstein.jpg";
+import industrialization_image from "./img/industrialization_image.jpg";
 
 export const articles = {
   18: {
@@ -17,6 +19,7 @@ export const articles = {
         author: "Гораций Уолпол",
         name: "\"Замок Отранто\"",
         width: "96px",
+        credits: "",
       }
     },
     "main features": {
@@ -37,6 +40,7 @@ export const articles = {
         name: "\"Инкуб покидает двух спящих женщин\"",
         author: "Хенри Фусели",
         width: "128px",
+        credits: "Public domain, via Wikimedia Commons"
       },
     }
   },
@@ -48,6 +52,15 @@ export const articles = {
     "key works and authors": {
       heading: "Основные произведения и авторы",
       text: "\"Франкенштейн\" Мэри Шелли (1818) сегодня является классикой жанра и занимает значимое место в истории. Книга исследует такие темы как создание, отвественность и человеческая природа. В романе поднимаются философские размышления о жизни и смерти. Расцвет готики продолжился в творчестве Эдгара Аллана По, чьи рассказы, такие как \"Падение дома Ашеров\" (1839) и \"Сердце-обличитель\" (1842), раскрывали темы безумия, смерти и ужаса, оказывая огромное влияние на последующих писателей. ",
+      images: {
+        src: frankenstein,
+        alt: "\"Франкенштейн\" Мэрри Шэлли (1818)",
+        link: "/horror-books/catalog/4",
+        name: "\"Франкенштейн\"",
+        author: "Мэри Шэлли",
+        width: "96px",
+        credits: "",
+      }
     },
     "main features": {
       heading: "Основные черты и темы",
@@ -56,6 +69,15 @@ export const articles = {
     "influence of science and society": {
       heading: "Влияние научного прогресса и социальных перемен",
       text: "Научные открытия и технический прогресс XIX века, с одной стороны, восхищали, а с другой - внушали опасения. Это нашло отражение в литературе ужасов, где научные эксперименты и изобретения часто становились источником катастроф. Социальные изменения, индустриализация и рост городов приводили к появлению новых страхов, которые нашли отражение в произведениях.",
+      images: {
+        src: industrialization_image,
+        alt: "Влияние научного прогресса и социальных перемен",
+        link: "http://www.freepik.com",
+        name: "Влияние научного прогресса и социальных перемен",
+        author: "",
+        width: "128px",
+        credits: "Designed by stories / Freepik",
+      }
     },
   },
   20: {

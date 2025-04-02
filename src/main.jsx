@@ -18,7 +18,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CatalogPage from "./pages/CatalogPage.jsx";
 import BookPage from "./pages/BookPage.jsx";
-import GitHubLogo from "./assets/github-mark-white.svg";
+import GitHubLogo from "./assets/img/github-mark-white.svg";
 
 const router = createBrowserRouter([
   {

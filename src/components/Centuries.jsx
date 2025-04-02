@@ -50,6 +50,7 @@ export default function Centuries() {
                       >
                         <p>{section.images.name}</p>
                         <p>{section.images.author}</p>
+                        <p>{section.images.credits}</p>
                       </div>
                     </a>
                   </div>
