@@ -25,6 +25,8 @@ export default function BookList({ books }) {
 
 function Book({ info }) {
   const { width, height } = useWindowDimensions();
+  const plot = info.sections.find(section => section.id == "plot");
+
   return (
     <>
       <img src={info.image} alt={info.name_en} width={50} height={75}></img>
@@ -34,12 +36,12 @@ function Book({ info }) {
         </h2>
         <h3 className={styles["book-author"]}>{info.author_ru}</h3>
         <p className={styles["book-plot"]}>
-          {info.plot
+          {plot
             ? width < 500
-              ? info.plot.slice(0, 100) + "..."
+              ? plot.content.slice(0, 100) + "..."
               : width < 1000
-              ? info.plot.slice(0, 175) + "..."
-              : info.plot.slice(0, 200) + "..."
+              ? plot.content.slice(0, 175) + "..."
+              : plot.content.slice(0, 200) + "..."
             : ""}
         </p>
       </div>
