@@ -1,5 +1,4 @@
-@import "variables";
-
+@import "../../styles/variables.css";
 .catalog {
   height: -webkit-fit-content;
   height: -moz-fit-content;

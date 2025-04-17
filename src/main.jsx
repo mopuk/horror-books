@@ -13,16 +13,16 @@ import {
 } from "react-router-dom";
 import { useCurrentScroll } from "./utils/CurrentScroll.jsx";
 
-import NavBar from "./components/NavBar.jsx";
-import ErrorPage from "./pages/ErrorPage.jsx";
-import HomePage from "./pages/HomePage.jsx";
-import CatalogPage from "./pages/CatalogPage.jsx";
-import BookPage from "./pages/BookPage.jsx";
+import NavBar from "./components/Navbar/NavBar.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
+import HomePage from "./components/HomePage/HomePage.jsx";
+import CatalogPage from "./components/CatalogPage/CatalogPage.jsx";
+import BookPage from "./components/BookPage/BookPage.jsx";
 import GitHubLogo from "./assets/img/github-mark-white.svg";
 
 const router = createBrowserRouter([
   {
-    path: "horror-books",
+    path: "/",
     element: <LayoutComponent />,
     errorElement: <ErrorPage />,
     children: [

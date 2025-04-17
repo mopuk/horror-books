@@ -1,17 +1,12 @@
-@import "variables";
+@import "../../styles/variables.css";
 
-.search-bar-container {
-  margin: 0.5em 0;
-  height: 2em;
-}
-
-.search-bar {
+.searchbar {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.search-bar-input {
+.searchbar__input {
   height: 2em;
   border: none;
   border-radius: 10px;
@@ -20,12 +15,12 @@
   color: white;
 }
 
-.search-bar-input:focus {
+.searchbar__input:focus {
   outline: 3px solid #868686;
   border: none;
 }
 
-.search-btn {
+.searchbar__btn {
   height: 16px;
   width: 16px;
   background-color: #333333;
@@ -33,6 +28,6 @@
   position: absolute;
   right: 10px;
 }
-.search-btn:hover {
+.searchbar__btn:hover {
   cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../styles/BookList.module.css";
+import styles from "./BookList.module.css";
 import { useNavigate } from "react-router-dom";
-import useWindowDimensions from "../utils/windowDimensions";
+import useWindowDimensions from "../../utils/windowDimensions";
 
 export default function BookList({ books }) {
   const navigate = useNavigate();
@@ -29,13 +29,13 @@ function Book({ info }) {
 
   return (
     <>
-      <img src={info.image} alt={info.name_en} width={50} height={75}></img>
-      <div className={styles["info-container"]}>
-        <h2 className={styles["book-title"]}>
+      <img src={info.image} alt={info.name_en} width={50} height={75} className={styles["book__img"]}></img>
+      <div className={styles["book__info-container"]}>
+        <h2 className={styles["book__title"]}>
           {info.name_ru} ({info.year})
         </h2>
-        <h3 className={styles["book-author"]}>{info.author_ru}</h3>
-        <p className={styles["book-plot"]}>
+        <h3 className={styles["book__author"]}>{info.author_ru}</h3>
+        <p className={styles["book__plot"]}>
           {plot
             ? width < 500
               ? plot.content.slice(0, 100) + "..."

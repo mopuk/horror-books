@@ -1,6 +1,6 @@
-@import "variables";
+@import "../../styles/variables.css";
 
-.container {
+.book {
   min-height: 100vh;
   max-height: fit-content;
   width: 90vw;
@@ -16,7 +16,7 @@
   gap: 0.5em;
 }
 
-.book-info {
+.book__info {
   img {
     float: left;
     width: 100px;
@@ -39,15 +39,15 @@
 }
 
 @media (min-width: 700px) {
-  .book-info img {
+  .book__info img {
     width: 150px;
   }
 }
 
-.book-section {
+.section {
   margin-bottom: 1em;
 
-  .section-title {
+  & .section__title {
     width: fit-content;
     font: var(--subheaders-font);
     color: var(--subheaders-color);
@@ -62,25 +62,25 @@
   }
 }
 
-.content-container {
+.section__content {
   margin: 0 1em;
   list-style-type: none;
   position: relative;
 
-  & h2 {
+  & .section__content__header {
     margin-top: 0.5em;
     font: var(--subheaders-font);
     color: var(--subheaders-color);
     position: relative;
   }
 
-  & h2::before {
+  & .section__content__header::before {
     content: url();
     position: absolute;
     left: -1em;
   }
 
-  & p {
+  & .section__content__text {
     font: var(--paragraph-font);
     color: var(--paragraph-color);
     white-space: pre-wrap;
@@ -88,13 +88,13 @@
 }
 
 @media (min-width: 700px) {
-  .container {
+  .book {
     width: 80vw;
   }
 }
 
 @media (min-width: 1000px) {
-  .container {
+  .book {
     width: 60vw;
   }
 }

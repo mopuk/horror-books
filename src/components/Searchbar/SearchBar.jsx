@@ -1,8 +1,8 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
-import styles from "../styles/SearchBar.module.css";
+import styles from "./SearchBar.module.css";
 
-export default function SearchBar({ isCatalog }) {
+export default function SearchBar({ isInCatalog }) {
   const navigate = useNavigate();
   const [inputVal, setInputVal] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,10 +14,10 @@ export default function SearchBar({ isCatalog }) {
   }, [query]);
 
   useEffect(() => {
-    if (isCatalog) {
+    if (isInCatalog) {
       inputRef.current.focus();
     }
-  }, [isCatalog]);
+  }, [isInCatalog]);
 
   function handleSearch(e) {
     if (e.target.tagName === "BUTTON" || e.key === "Enter") {
@@ -26,7 +26,7 @@ export default function SearchBar({ isCatalog }) {
       setSearchParams(params, {
         preventScrollReset: true,
       });
-      if (!isCatalog) {
+      if (!isInCatalog) {
         navigate(`/horror-books/catalog?q=${inputVal}`);
         return;
       }
@@ -35,21 +35,21 @@ export default function SearchBar({ isCatalog }) {
 
   return (
     <>
-      <div className={styles["search-bar"]} onKeyDown={handleSearch}>
+      <div className={styles["searchbar"]} onKeyDown={handleSearch}>
         <input
           ref={inputRef}
-          className={styles["search-bar-input"]}
+          className={styles["searchbar__input"]}
           type="search"
-          placeholder={isCatalog ? "Книги здесь" : "Поиск в каталоге"}
+          placeholder={isInCatalog ? "Книги здесь" : "Поиск в каталоге"}
           value={inputVal}
           onChange={(e) => {
             setInputVal(e.target.value);
           }}
         />
         <button
-          className={styles["search-btn"]}
+          className={styles["searchbar__btn"]}
           onClick={handleSearch}
-          title="search-button"
+          title="searchbar-btn"
         >
           <svg
             width="16"

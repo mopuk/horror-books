@@ -1,9 +1,9 @@
-import styles from "../styles/CatalogPage.module.css";
+import styles from "./CatalogPage.module.css";
 import React, { useState, useEffect } from "react";
-import BookList from "../components/BookList.jsx";
-import { books } from "../assets/books.js";
+import BookList from "../BookList/BookList.jsx";
+import { books } from "../../assets/books.js";
 import { useSearchParams } from "react-router-dom";
-import SearchBar from "../components/SearchBar.jsx";
+import SearchBar from "../Searchbar/SearchBar.jsx";
 
 export default function CatalogPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -31,7 +31,7 @@ export default function CatalogPage() {
 
   return (
     <div className={styles.catalog}>
-      <SearchBar />
+      <SearchBar isInCatalog={true}/>
       <div className={`${styles.books}`}>
         {Object.keys(searchingBooks).length !== 0 ? (
           <BookList books={searchingBooks} />

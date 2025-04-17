@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
-@import "variables";
+@import "../../styles/variables.css";
 
 .book-list {
   height: fit-content;
-  /* overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: #1c1c1cd6 var(--bg-transparent); */
   list-style: none;
   border-radius: var(--rounded-borders);
   padding: 0 0.5em;
@@ -21,46 +18,43 @@
   display: flex;
 }
 
-.book {
-  &:not(:last-child) {
-    border-bottom: 1px solid #7c7c7c;
-  }
+.book:not(:last-child) {
+  border-bottom: 1px solid #7c7c7c;
+}
 
-  & img {
-    width: 90px;
-    height: 120px;
-  }
 
-  & .info-container {
-    margin: 0 10px;
-  }
+.book__img {
+  width: 90px;
+  height: 120px;
 
-  & img:hover {
+  & :hover {
     cursor: pointer;
     color: #d4d4d4;
   }
 }
 
-.info-container {
-  & .book-title {
+.book__info-container {
+  margin: 0 10px;
+
+  & .book__title {
     color: var(--headers-color);
     font: var(--headers-font);
     margin: 0;
   }
 
-  & .book-title:hover {
+  & .book__title:hover {
     cursor: pointer;
     color: #d4d4d4;
   }
 
-  & .book-author {
+  & .book__author {
     font: var(--subheaders-font);
     color: var(--subheaders-color);
     margin: 0;
     margin-bottom: 10px;
   }
 
-  & .book-plot {
+  & .book__plot {
     font: var(--paragraph-font);
     color: var(--paragraph-color);
   }

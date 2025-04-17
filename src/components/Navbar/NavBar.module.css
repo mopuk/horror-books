@@ -1,0 +1,55 @@
+@import "../../styles/variables.css";
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-grey);
+  height: 3em;
+
+  & .search-bar-container {
+    position: absolute;
+    right: 0.5em;
+    margin: 1em 0;
+  }
+}
+
+.nav__link {
+  position: relative;
+  padding: 0.5em;
+  margin: 0.25em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font: var(--headers-font);
+  font-weight: initial;
+  font-size: 1em;
+  color: var(--headers-color);
+
+  & svg {
+    margin: 0 3px;
+  }
+
+  &:hover {
+    color: #d4d4d4;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width 0.2s ease, background-color 0.2s ease;
+  }
+
+  &:hover::after {
+    width: calc(100% - 0.75em);
+    background-color: var(--crimson-red);
+  }
+}

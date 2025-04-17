@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import styles from "../styles/Sidebar.module.css";
+import styles from "./ContentList.module.css";
 
-export default function Sidebar({ source }) {
+export default function ContentList({ source }) {
   const [isOpen, setIsOpen] = useState(false);
   const [containerHeight, setContainerHeight] = useState(0);
   const links = useLinks(source);
@@ -14,15 +14,14 @@ export default function Sidebar({ source }) {
   }, [isOpen, links]);
 
   return (
-    <aside className={styles.side}>
+    <aside className={styles["content-list"]}>
       <div
-        className={styles["side-header"]}
+        className={styles["content-list__header"]}
         onClick={(e) => setIsOpen((prev) => !prev)}
       >
         <h2>Содержание</h2>
-        {/* {isOpen ? "▼" : "◄"} */}
         <span
-          className={styles["open-button"]}
+          className={styles["content-list__open-btn"]}
           style={{ transform: `${isOpen ? "rotate(-90deg)" : ""}` }}
         >
           ◄
@@ -30,18 +29,18 @@ export default function Sidebar({ source }) {
       </div>
 
       <div
-        className={styles["headers-container"]}
+        className={styles["content-list__headers-container"]}
         style={{ height: `${containerHeight}px` }}
       >
         <ul
-          className={`${styles.headers} ${isOpen ? styles.opened : ""}`}
+          className={`${styles["content-list__headers"]} ${isOpen ? styles.opened : ""}`}
           ref={headersRef}
         >
           {links.map(({ id, header }) => {
             if (header) {
               return (
-                <li key={id}>
-                  <HashLink to={`#${id}`} className={styles.link}>
+                <li key={id} className={styles["content-list__item"]}>
+                  <HashLink to={`#${id}`} className={styles["content-list__link"]}>
                     {header}
                   </HashLink>
                 </li>
