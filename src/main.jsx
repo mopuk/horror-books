@@ -48,10 +48,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/",
-    element: <Navigate to="/horror-books" />,
-  },
 ]);
 
 export function LayoutComponent() {
