@@ -13,7 +13,7 @@ export default function BookList({ books }) {
           <li
             key={index}
             className={styles.book}
-            onClick={(e) => navigate(`/horror-books/catalog/${index}`)}
+            onClick={(e) => navigate(`/catalog/${index}`)}
           >
             <Book info={book} />
           </li>
