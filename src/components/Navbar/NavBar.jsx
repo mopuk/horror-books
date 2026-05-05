@@ -9,7 +9,7 @@ function NavBar() {
 
   return (
     <nav className={styles["nav"]}>
-      <Link to="/horror-books/home" className={styles["nav__link"]}>
+      <Link to="home" className={styles["nav__link"]}>
         <svg
           width="18"
           height="18"
@@ -27,7 +27,7 @@ function NavBar() {
         </svg>
         ГЛАВНАЯ
       </Link>
-      <Link to="/horror-books/catalog" className={styles["nav__link"]}>
+      <Link to="catalog" className={styles["nav__link"]}>
         <svg
           width="18"
           height="18"
