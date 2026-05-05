@@ -27,7 +27,7 @@ export default function SearchBar({ isInCatalog }) {
         preventScrollReset: true,
       });
       if (!isInCatalog) {
-        navigate(`/horror-books/catalog?q=${inputVal}`);
+        navigate(`/catalog?q=${inputVal}`);
         return;
       }
     }
